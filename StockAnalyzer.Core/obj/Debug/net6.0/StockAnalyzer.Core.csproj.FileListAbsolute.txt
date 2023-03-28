@@ -1,0 +1,12 @@
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\bin\Debug\net6.0\StockAnalyzer.Core.deps.json
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\bin\Debug\net6.0\StockAnalyzer.Core.dll
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\bin\Debug\net6.0\StockAnalyzer.Core.pdb
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.csproj.AssemblyReference.cache
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.AssemblyInfoInputs.cache
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.AssemblyInfo.cs
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.csproj.CoreCompileInputs.cache
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.dll
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\refint\StockAnalyzer.Core.dll
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\StockAnalyzer.Core.pdb
+C:\git\Asynchronous-Programming\StockAnalyzer.Core\obj\Debug\net6.0\ref\StockAnalyzer.Core.dll
