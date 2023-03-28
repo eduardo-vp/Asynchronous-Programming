@@ -2,6 +2,7 @@
 using StockAnalyzer.Core;
 using StockAnalyzer.Core.Domain;
 using StockAnalyzer.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
@@ -28,22 +29,20 @@ public partial class MainWindow : Window
     private async void Search_Click(object sender, RoutedEventArgs e)
     {
         BeforeLoadingStockData();
-        
-        using (var client = new HttpClient())
+
+        // await will re-throw exceptions that occur inside the Task
+        try
         {
+            var store = new DataStore();
 
-            var responseTask = client.GetAsync($"{API_URL}/{StockIdentifier.Text}");
+            var responseTask = store.GetStockPrices(StockIdentifier.Text);
 
-            // await will pause execution of the method until a result is available
-            var response = await responseTask;
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
-
-            Stocks.ItemsSource = data;
+            Stocks.ItemsSource = await responseTask;
         }
-        
+        catch (Exception ex)
+        {
+            Notes.Text = ex.Message;
+        }
 
         AfterLoadingStockData();
     }
