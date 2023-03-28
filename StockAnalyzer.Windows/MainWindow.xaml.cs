@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -30,7 +31,21 @@ public partial class MainWindow : Window
     {
         BeforeLoadingStockData();
 
-        // await will re-throw exceptions that occur inside the Task
+        try
+        {
+            // exception will be swallowed if await isn't used
+            GetStocks();
+        }
+        catch (Exception ex)
+        {
+            Notes.Text = ex.Message;
+        }
+
+        AfterLoadingStockData();
+    }
+
+    private async Task GetStocks()
+    {
         try
         {
             var store = new DataStore();
@@ -41,17 +56,9 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            Notes.Text = ex.Message;
+            throw ex;
         }
-
-        AfterLoadingStockData();
     }
-
-
-
-
-
-
 
 
     private void BeforeLoadingStockData()
