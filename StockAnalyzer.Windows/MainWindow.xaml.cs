@@ -29,19 +29,19 @@ public partial class MainWindow : Window
     // async allows the method to execute asynchronously
     private async void Search_Click(object sender, RoutedEventArgs e)
     {
-        BeforeLoadingStockData();
-
         try
         {
-            // exception will be swallowed if await isn't used
-            GetStocks();
+            BeforeLoadingStockData();
+            await GetStocks();
         }
         catch (Exception ex)
         {
             Notes.Text = ex.Message;
         }
-
-        AfterLoadingStockData();
+        finally
+        {
+            AfterLoadingStockData();
+        }
     }
 
     private async Task GetStocks()
